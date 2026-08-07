@@ -1,4 +1,4 @@
-const CACHE_NAME = "nfcasa-v5-3";
+const CACHE_NAME = "nfcasa-v5-4-4";
 const APP_FILES = [
   "./",
   "./index.html",

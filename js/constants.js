@@ -20,10 +20,10 @@ export const PRODUCT_CATEGORIES = [
 ];
 
 export const FAMILY_MEMBERS = [
-  { id: "anna", nom: "Anna", color: "#9B6BDF" },
-  { id: "pau", nom: "Pau", color: "#3478F6" },
-  { id: "mama", nom: "Mama", color: "#E46B8A" },
-  { id: "papa", nom: "Papa", color: "#E28A35" }
+  { id: "anna", nom: "Anna", color: "#ed69b0ff" },
+  { id: "pau", nom: "Pau", color: "#4de3a7ff" },
+  { id: "mama", nom: "Mama", color: "#e4a36bff" },
+  { id: "papa", nom: "Papa", color: "#3c87e9ff" }
 ];
 
 export const COLLECTIONS = {
