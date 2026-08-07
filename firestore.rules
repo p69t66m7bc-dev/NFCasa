@@ -1,0 +1,11 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // L'app inicia sessió anònimament a Firebase abans d'accedir a Firestore.
+    // No hi ha login visible per a la família.
+    match /{document=**} {
+      allow read, write: if request.auth != null;
+    }
+  }
+}

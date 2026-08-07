@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#f6f7f9" />
+  <meta name="description" content="Llista de la compra familiar compartida en temps real." />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="apple-mobile-web-app-title" content="NFCasa" />
+  <link rel="manifest" href="./manifest.webmanifest" />
+  <link rel="icon" href="./icons/icon-192.png" />
+  <link rel="apple-touch-icon" href="./icons/icon-192.png" />
+  <link rel="stylesheet" href="./css/styles.css?v=5" />
+  <title>NFCasa · Llista de la compra</title>
+</head>
+<body>
+  <div id="app" class="app-shell">
+    <header class="topbar">
+      <button id="backButton" class="icon-button hidden" type="button" aria-label="Tornar enrere">←</button>
+      <div class="brand-title">
+        <p class="brand-kicker"><img class="brand-mark" src="./branding/logo-mark.png" alt="" /> NFCasa</p>
+        <h1 id="pageTitle">Llista de la compra</h1>
+      </div>
+      <button id="profileButton" class="avatar-button hidden" type="button" aria-label="Usuari actual"></button>
+    </header>
+
+    <main id="mainContent" class="main-content" aria-live="polite"></main>
+  </div>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <dialog id="confirmDialog" class="dialog">
+    <form method="dialog" class="dialog-card">
+      <div class="dialog-icon success">✓</div>
+      <h2>Finalitzar la compra?</h2>
+      <p>Els productes marcats s’eliminaran de la llista. Els que encara no hagis marcat es conservaran.</p>
+      <div class="dialog-actions">
+        <button class="button button-secondary" value="cancel">Cancel·lar</button>
+        <button class="button button-primary" value="confirm">Sí, finalitzar</button>
+      </div>
+    </form>
+  </dialog>
+
+  <dialog id="editDialog" class="dialog">
+    <form id="editProductForm" method="dialog" class="dialog-card" onsubmit="return false;">
+      <div class="dialog-handle"></div>
+      <h2>Editar producte</h2>
+      <div class="field">
+        <label for="editProductName">Nom</label>
+        <input id="editProductName" name="productName" maxlength="80" required />
+      </div>
+      <div class="field">
+        <label for="editProductCategory">Categoria</label>
+        <select id="editProductCategory" name="productCategory"></select>
+      </div>
+      <div class="dialog-actions stacked-actions">
+        <button class="button button-primary" type="submit">Desar canvis</button>
+        <button id="openDeleteFromEdit" class="button button-danger-ghost" type="button">Eliminar producte</button>
+        <button class="button button-secondary" type="button" onclick="document.querySelector('#editDialog').close()">Cancel·lar</button>
+      </div>
+    </form>
+  </dialog>
+
+  <dialog id="deleteDialog" class="dialog">
+    <form method="dialog" class="dialog-card">
+      <div class="dialog-icon danger">!</div>
+      <h2>Eliminar producte?</h2>
+      <p>Vols eliminar <strong id="deleteProductName"></strong> de la llista?</p>
+      <div class="dialog-actions">
+        <button class="button button-secondary" value="cancel">Cancel·lar</button>
+        <button class="button button-danger" value="confirm">Eliminar</button>
+      </div>
+    </form>
+  </dialog>
+
+  <script type="module" src="./js/app.js?v=5"></script>
+</body>
+</html>
