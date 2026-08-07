@@ -123,3 +123,9 @@ Els productes de supermercat es guarden associats a la botiga concreta. La vista
 ## Ajust de la v5.2
 - S'ha eliminat el logotip gran de la pantalla "Qui ets?".
 - La icona/branding visual es reserva principalment per a la capçalera i la PWA.
+
+
+## Ajustos de la v5.3
+- La capçalera de NFCasa queda centrada de manera real, independentment del perfil o del botó enrere.
+- Les categories del resum de la pantalla inicial són clicables i obren directament la seva llista.
+- Supermercat obre el selector Mercadona / Novavenda / Esclat.

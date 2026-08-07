@@ -80,7 +80,7 @@ export function renderHome(products, user) {
     ${pending.length ? `<section class="summary-grid summary-grid-five">
       ${CATEGORIES.map((category) => {
         const count = countPendingForTopCategory(products, category.id);
-        return `<div class="summary-card"><span>${category.icona}</span><strong>${count}</strong><small>${category.nom}</small></div>`;
+        return `<button class="summary-card summary-card-button" type="button" data-category="${category.id}" aria-label="Obrir ${category.nom}"><span>${category.icona}</span><strong>${count}</strong><small>${category.nom}</small></button>`;
       }).join("")}
     </section>` : ""}
 

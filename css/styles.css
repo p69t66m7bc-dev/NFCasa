@@ -43,17 +43,34 @@ button { -webkit-tap-highlight-color: transparent; }
 }
 
 .topbar {
+  position: relative;
   min-height: 94px;
-  display: grid;
-  grid-template-columns: 46px 1fr 46px;
+  display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: 10px;
   padding-top: calc(14px + env(safe-area-inset-top, 0px));
 }
 
-.topbar > div { grid-column: 2; text-align: center; }
-.topbar .icon-button { grid-column: 1; grid-row: 1; }
-.topbar .avatar-button { grid-column: 3; grid-row: 1; }
+/* El títol queda centrat respecte a tota la pantalla, encara que els botons
+   laterals tinguin amplades diferents. */
+.topbar > .brand-title {
+  position: absolute;
+  left: 50%;
+  top: calc(14px + env(safe-area-inset-top, 0px));
+  transform: translateX(-50%);
+  width: min(62%, 360px);
+  min-height: 66px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  pointer-events: none;
+}
+.topbar .icon-button,
+.topbar .avatar-button { position: relative; z-index: 2; }
+.topbar .avatar-button { margin-left: auto; }
 
 .brand-kicker {
   display: inline-flex;
@@ -418,6 +435,19 @@ h3 { font-size: 1.03rem; }
   background: rgba(255,255,255,.76);
   text-align: center;
 }
+.summary-card-button {
+  appearance: none;
+  width: 100%;
+  color: inherit;
+  cursor: pointer;
+  transition: transform 150ms ease, background 150ms ease, border-color 150ms ease, box-shadow 150ms ease;
+}
+.summary-card-button:hover {
+  background: #fff;
+  border-color: #d5ddd8;
+  box-shadow: 0 8px 20px rgba(24, 39, 30, 0.06);
+}
+.summary-card-button:active { transform: scale(.96); }
 .summary-card > span { display: block; font-size: 1.15rem; margin-bottom: 4px; }
 .summary-card strong { display: block; font-size: 1.1rem; }
 .summary-card small {
@@ -589,7 +619,6 @@ h3 { font-size: 1.03rem; }
 
 @media (max-width: 420px) {
   .app-shell { padding-left: 14px; padding-right: 14px; }
-  .topbar { grid-template-columns: 42px 1fr 78px; }
   .icon-button { width: 42px; height: 42px; }
   .avatar-button { min-width: 42px; max-width: 78px; }
   .avatar-name { display: none; }

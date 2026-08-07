@@ -1,9 +1,9 @@
-const CACHE_NAME = "nfcasa-v5-1";
+const CACHE_NAME = "nfcasa-v5-3";
 const APP_FILES = [
   "./",
   "./index.html",
-  "./css/styles.css?v=5",
-  "./js/app.js?v=5",
+  "./css/styles.css?v=53",
+  "./js/app.js?v=53",
   "./js/auth.js",
   "./js/constants.js",
   "./js/firebase.js",
