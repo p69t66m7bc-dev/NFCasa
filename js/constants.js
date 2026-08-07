@@ -21,9 +21,9 @@ export const PRODUCT_CATEGORIES = [
 
 export const FAMILY_MEMBERS = [
   { id: "anna", nom: "Anna", color: "#ed69b0ff" },
-  { id: "pau", nom: "Pau", color: "#4de3a7ff" },
+  { id: "pau", nom: "Pau", color: "#94e5c4ff" },
   { id: "mama", nom: "Mama", color: "#e4a36bff" },
-  { id: "papa", nom: "Papa", color: "#3c87e9ff" }
+  { id: "papa", nom: "Papa", color: "#63c1e9ff" }
 ];
 
 export const COLLECTIONS = {
